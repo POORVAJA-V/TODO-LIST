@@ -17,9 +17,15 @@ const Footer = () => {
         optio? Est.
       </p>
       <div className="flex justify-center gap-2 mt-3">
-        <span className="footerIcon">
-          <FaGithub />
-        </span>
+        <a
+          href="https://github.com/noorjsdivs"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="footerIcon">
+            <FaGithub />
+          </span>
+        </a>
         <span className="footerIcon">
           <FaLinkedin />
         </span>
