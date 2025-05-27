@@ -1,9 +1,12 @@
 
-📝 Full-Stack ToDo List App
+## 📝 Full-Stack ToDo List App
+
 A modern and responsive ToDo List app with full CRUD functionality built using the MERN stack, enhanced with TypeScript, Tailwind CSS, and animations via Framer Motion.
 
-🚀 Tech Stack
-Frontend
+## 🚀 Tech Stack
+
+## Frontend
+
 Next.js + React.js
 
 TypeScript
@@ -14,17 +17,20 @@ Framer Motion (animations)
 
 State Management: Redux Toolkit + Zustand
 
-Backend
+## Backend
+
 Node.js
 
 Express.js
 
 MongoDB (with Mongoose)
 
-Deployment
+## Deployment
+
 Frontend: Vercel / Netlify
 
-📦 Features
+## 📦 Features
+
 Create, Read, Update, Delete tasks
 
 Mark tasks as complete/incomplete
