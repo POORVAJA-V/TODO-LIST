@@ -1,12 +1,13 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from 'react-redux';
 import { deleteTodos } from '../reduxStore/TodoSlice';
 
-const TodoList = ({todo,_id}) => {
-  const dispatch = useDispatch()
-    const [mark, setMark] = useState(false);
+const TodoList = ({ todo, _id }) => {
+  const dispatch = useDispatch();
+  const [mark, setMark] = useState(false);
+
   return (
     <motion.li
       initial={{ y: 10, opacity: 0 }}
@@ -14,19 +15,33 @@ const TodoList = ({todo,_id}) => {
       transition={{
         y: { type: "spring", stiffness: 120 },
       }}
-      onClick={() => setMark(!mark)}
-      className={`${
-        mark
-          ? "border-l-orange-500 border-orange-900"
-          : "border-l-green-500 border-green-900"
-      } w-full font-tiitleFont font-medium text-base border-[1px] border-l-[6px]  px-2 py-1 cursor-pointer flex items-center justify-between`}
+      className={`w-full font-titleFont font-medium px-0 py-2 mb-2 flex items-center justify-between border-b border-gray-200`}
+      style={{ background: 'none', boxShadow: 'none' }}
     >
-      {todo}
-      <span onClick={()=>dispatch(deleteTodos(_id))} className="text-xl text-gray-300 hover:text-red-500 duration-300 cursor-pointer">
+      <div className="flex items-center gap-3 w-full">
+        <input
+          type="checkbox"
+          checked={mark}
+          onChange={() => setMark(!mark)}
+          className="accent-green-500 w-5 h-5"
+        />
+        <span
+          className={`flex-1 transition-colors duration-200 ${
+            mark ? "line-through text-gray-400" : "text-white"
+          }`}
+        >
+          {todo}
+        </span>
+      </div>
+      <button
+        onClick={() => dispatch(deleteTodos(_id))}
+        className="ml-4 text-xl text-gray-400 hover:text-red-500 transition-colors rounded-full p-1 hover:bg-gray-100"
+        aria-label="Delete todo"
+      >
         <MdDelete />
-      </span>
+      </button>
     </motion.li>
   );
-}
+};
 
-export default TodoList
+export default TodoList;

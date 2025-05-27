@@ -10,7 +10,7 @@ const SuccessMsg = ({ successMsg }) => {
       transition={{
         y: { type: "spring", stiffness: 120 },
       }}
-      className={`border-b-green-500 text-green-500 absolute shadow-todoShodow font-titleFont tracking-wide font-medium text-lg bottom-10 left-[40%] bg-bodyColor px-10 py-4 rounded-sm border-b-[6px]`}
+      className={`border-b-green-500 text-green-500 absolute shadow-todoShodow font-titleFont tracking-wide font-medium text-lg top-10 right-10 bg-bodyColor px-10 py-4 rounded-sm border-b-[6px]`}
     >
       <p className="flex items-center gap-4">
         <span className="text-xl animate-spin">

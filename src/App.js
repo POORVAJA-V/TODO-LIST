@@ -7,14 +7,23 @@ import InputForm from "./components/InputForm";
 function App() {
   const todosItem = useSelector((state) => state.todos.todosList);
   return (
-    <div className="w-full min-h-screen pt-4 font-bodyFont bg-gradient-to-t from-sky-600 via-sky-400 to-sky-300 text-white px-4 flex flex-col gap-10 justify-center items-center">
-      {
-        todosItem.length>0?  <Category />:""
-      }
-      <div className="w-full lgl:w-[850px] h-full bg-bodyColor p-4 lgl:p-10 flex flex-col gap-10">
+    <div className="min-h-screen w-full bg-white flex flex-col items-center justify-start py-10 px-2">
+      <header className="mb-4 text-center">
+        <h1 className="text-3xl text-black-700 font-bold mt-0">Stay Organized and Productive!</h1>
+      </header>
+      <main className="w-full h-50 max-w-2xl bg-white/90 rounded-xl shadow-lg p-5 flex flex-col gap-5">
         <InputForm />
-        <Footer />
-      </div>
+        {todosItem.length > 0 ? (
+          <div className="mb-4">
+            <Category />
+          </div>
+        ) : (
+          <div className="text-center text-gray-900 font-medium mt-8">
+            No todos yet. Add your first task!
+          </div>
+        )}
+      </main>
+      <Footer />
     </div>
   );
 }
